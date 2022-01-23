@@ -21,7 +21,7 @@ Join discord for get notified or you have more questions [DISCORD](https://disco
 - Settings (you can't turn on or off what you want to collect)
 - LvL7 Reconnect mode (only turn on if your cmd can check ping)
   Opent a cmd (write to search bar) and open it.
-  Type this command to the console without : `ping -n 1 www.google.com | findstr TTL && Echo CODE WORKS(you can enable the code)` If you get response it works if not it won't.
+  Type this command to the console without : `ping -n 1 www.google.com | findstr TTL && Echo CODE WORKS(you can enable the mode)` If you get response it works if not it won't.
 
 ## CONS
 - You can't close the cmd while running the macro. (If you do other functions will be stop and only the aready running macro will run)
