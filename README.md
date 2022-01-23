@@ -1,7 +1,7 @@
 # ADVANCED BEE SWARM SIMULATOR MACROS
 This macro is controlled by a batch file it's automates timers to the collectable.
 
-# PROS
+## PROS
 - Macros has fully separated from each other
 - CMD UI (Checks your ping/Reconnection/Activitylog/Timered Ticket and Festive Feast, Wax, Antpass)
 - CMD Select a number which field you want to go.
@@ -16,16 +16,16 @@ This macro is controlled by a batch file it's automates timers to the collectabl
 - Settings (you can't turn on or off what you want to collect)
 - LvL7 Reconnect mode (only turn on if your cmd can check ping)
   Opent a cmd (write to search bar) and open it.
-  Type this command to the console without "": "ping -n 1 www.google.com | findstr TTL && Echo CODE WORKS(you can enable the code)" If you get response it works if not it won't.
+  Type this command to the console without : `ping -n 1 www.google.com | findstr TTL && Echo CODE WORKS(you can enable the code)` If you get response it works if not it won't.
 
-# CONS
+## CONS
 - You can't close the cmd while running the macro. (If you do other functions will be stop and only the aready running macro will run)
 - You can't edit the macros cuz it's exe files.
 
-# Requirements
+## Requirements
 - 28 movement speed
 
-# Supported MODES
+## Supported MODES
 - Sunflower
 - Strawberry
 - Pinetree
@@ -39,22 +39,22 @@ This macro is controlled by a batch file it's automates timers to the collectabl
 - Bucko Bee Quests
 - (Soon Polarbear Quest, Rose, and what community needs)
 
-# Q&A
-Q: Which is different this macro and other macros?
-_A: Perfect timed collections 7 layer of crash/internet detection, easier to manage the settings,99.7% fully optimization.
+## Q&A
+- Q: Which is different this macro and other macros?
+- A: Perfect timed collections 7 layer of crash/internet detection, easier to manage the settings,99.7% fully optimization.
 
-Q: My antivirus detected as a virus why?
-_A: Macro recorder is aready a "virus" but when you install it it gets a exepction don't check it.
+- Q: My antivirus detected as a virus why?
+- A: Macro recorder is aready a "virus" but when you install it it gets a exepction don't check it.
 
-Q: Why macrorecorder is a virus?
-_A: Macrorecoder have pc shutdown keyboard pressing if image etc and the antiviruses thinks it's is a virus.
+- Q: Why macrorecorder is a virus?
+- A: Macrorecoder have pc shutdown keyboard pressing if image etc and the antiviruses thinks it's is a virus.
 
-Q: But why my macros are not detected virus only this?
-_A: This macros are build to exe open a fresh macro file top left corner File->Compile To ExE-> and that file check in virustotal.
+- Q: But why my macros are not detected virus only this?
+- A: This macros are build to exe open a fresh macro file top left corner File->Compile To ExE-> and that file check in virustotal.
 
-Q: Why the macros are exe and not mcr?
-_A: Console can't open the mcr file and can't detect when it's finished. Exe is different when you opened it's automaticly starts and when the macro finished it's automaticly close. This macros console can detect and if the collection finished it's automactily starts the other collect macro.
+- Q: Why the macros are exe and not mcr?
+- A: Console can't open the mcr file and can't detect when it's finished. Exe is different when you opened it's automaticly starts and when the macro finished it's automaticly close. This macros console can detect and if the collection finished it's automactily starts the other collect macro.
 
-Q: I'm still scared to use this macro.
-_A: If you scared download a vmware and inside test it for that check tutorial in youtube.
+- Q: I'm still scared to use this macro.
+- A: If you scared download a vmware and inside test it for that check tutorial in youtube.
 
