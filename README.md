@@ -18,7 +18,7 @@ Q: I'm still scared to use this macro.
 A: If you scared download a vmware and inside test it for that check tutorial in youtube.
 
 Q: What the macro good and bad side?
-Good side
+# Good side
 - Macros has fully separated from each other
 - CMD UI (Checks your ping/Reconnection/Activitylog/Timered Ticket and Festive Feast, Wax, Antpass)
 - CMD Select a number which field you want to go.
@@ -35,13 +35,14 @@ Good side
   Opent a cmd (write to search bar) and open it.
   Type this command to the console without "": "ping -n 1 www.google.com | findstr TTL && Echo CODE WORKS(you can enable the code)" If you get response it works if not it won't.
 
-Bad side
-
+# Bad side
 - You can't close the cmd while running the macro. (If you do other functions will be stop and only the aready running macro will run)
 - You can't edit the macros cuz it's exe files.
-Requirements
+
+# Requirements
 - 28 movement speed
-Supported MODES
+
+# Supported MODES
 - Sunflower
 - Strawberry
 - Pinetree
@@ -54,3 +55,5 @@ Supported MODES
 - Snail Killer (soon will gets a rework)
 - Bucko Bee Quests
 - (Soon Polarbear Quest, Rose, and what community needs)
+
+#
