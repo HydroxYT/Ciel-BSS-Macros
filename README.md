@@ -2,6 +2,9 @@
 This macro is controlled by a batch file it's automates timers to the collectable.
 
 Join discord for get notified or you have more questions [DISCORD](https://discord.gg/qX4xXDEQd2)
+
+#NOTICE SOME ANTIVIRUS DETECTS AS A TROJAN OR SPYWARE BEFORE YOU DO ANYTHING READ THE Q&A
+
 ## PROS
 - Macros has fully separated from each other
 - CMD UI (Checks your ping/Reconnection/Activitylog/Timered Ticket and Festive Feast, Wax, Antpass)
