@@ -59,3 +59,6 @@ Join discord for get notified or you have more questions [DISCORD](https://disco
  Q: I'm still scared to use this macro.
  * A: If you scared download a vmware and inside test it for that check tutorial in youtube.
 
+ Q: I trust you but what should i do to antivirus don't delete it?
+ * A: Search in google with your antivirus name "How to add folder exclusion?" and inside extract it.
+
