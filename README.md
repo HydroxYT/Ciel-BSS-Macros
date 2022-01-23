@@ -39,7 +39,7 @@ This macro is controlled by a batch file it's automates timers to the collectabl
 - Bucko Bee Quests
 - (Soon Polarbear Quest, Rose, and what community needs)
 
-#Q&A
+# Q&A
 Q: Which is different this macro and other macros?
 A: Perfect timed collections 7 layer of crash/internet detection, easier to manage the settings,99.7% fully optimization.
 
