@@ -50,10 +50,10 @@ This macro is controlled by a batch file it's automates timers to the collectabl
  * A: Macrorecoder have pc shutdown keyboard pressing if image etc and the antiviruses thinks it's is a virus.
 
  Q: But why my macros are not detected virus only this?
- * A: This macros are build to exe open a fresh macro file top left corner File->Compile To ExE-> and that file check in virustotal.
+ * A: This macros are build to exe, open a empty macro file top left corner File->Compile To ExE-> name it and that file check in virustotal.(It will alert as a virus)
 
  Q: Why the macros are exe and not mcr?
- * A: Console can't open the mcr file and can't detect when it's finished. Exe is different when you opened it's automaticly starts and when the macro finished it's automaticly close. This macros console can detect and if the collection finished it's automactily starts the other collect macro.
+ * A: Console can't open the mcr file and can't detect when it's finished. Exe is different when you opened it's automaticly starts and when the macro finished it's automaticly close. Exe macros console can detect and if the collection finished it's automactily starts the other collect macro.
 
  Q: I'm still scared to use this macro.
  * A: If you scared download a vmware and inside test it for that check tutorial in youtube.
