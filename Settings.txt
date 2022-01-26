@@ -10,4 +10,7 @@ TicketCollect=true
 FeastCollect=true 
 CandleCollect=true 
 AntPassCollect=true 
+AntModeCollectAndPlay=false (wip)
+#If AntMode enabled turn off the AntPassCollect!(if you don't want to the macro run 2 times)
 ================================================================================================ 
+AutoUpdate=true
