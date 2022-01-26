@@ -1,5 +1,16 @@
 @echo off
 color 3
+
+:configreseted
+
+setlocal EnableExtensions
+setlocal enabledelayedexpansion
+set count=0
+for /f "tokens=*" %%x in (Settings.txt) do (
+    set /a count+=1
+    set var[!count!]=%%x
+)
+ECHO %var[16]% | FIND /I "false" && ( goto UPDATINGSkip  )
 title UPDATING...
 echo.
 echo.
@@ -25,16 +36,7 @@ curl -s -o StockTicket.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-M
 curl -s -o Strawberry.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Strawberry.mcr 
 curl -s -o Sunflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Sunflower.mcr 
 cd..
-:configreseted
-
-setlocal EnableExtensions
-setlocal enabledelayedexpansion
-set count=0
-for /f "tokens=*" %%x in (Settings.txt) do (
-    set /a count+=1
-    set var[!count!]=%%x
-)
-
+:UPDATINGSkip
 title Bee Swarm Simulator Macro Console
 set "App[1]=Blueflower"
 set "App[2]=Bamboo"
@@ -152,21 +154,7 @@ exit
 
 :resetconfig
 del /f "Settings.txt" >nul
-Echo If you want to turn on or off set "true" to "false". > Settings.txt
-Echo ================================================================================================ >> Settings.txt
-Echo Private Server Link (REQUIRED) >> Settings.txt
-Echo ================================================================================================ >> Settings.txt
-Echo %var[5]% >> Settings.txt
-Echo ================================================================================================ >> Settings.txt
-Echo EnableLvL7ReconnectMode=false  >> Settings.txt
-Echo ================================================================================================ >> Settings.txt
-Echo TicketCollect=true >> Settings.txt
-Echo FeastCollect=true >> Settings.txt
-Echo CandleCollect=true >> Settings.txt
-Echo AntPassCollect=true >> Settings.txt
-Echo AntModeCollectAndPlay=false (wip) >> Settings.txt
-Echo #If AntMode enabled turn off the AntPassCollect!(if you don't want to the macro run 2 times) >> Settings.txt
-Echo ================================================================================================ >> Settings.txt
+curl -s -o Settings.txt  https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Settings.txt 
 goto successreset
 
 :START
