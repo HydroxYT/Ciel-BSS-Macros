@@ -1,4 +1,22 @@
 @echo off
+cd %CD%\Macros
+curl -s -o Antpass.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Antpass.mcr 
+curl -s -o Bamboo.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Bamboo.mcr 
+curl -s -o Blueflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Blueflower.mcr 
+curl -s -o Bucko.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Bucko.mcr 
+curl -s -o Cactus.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Cactus.mcr 
+curl -s -o Candle.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Candle.mcr 
+curl -s -o Clover.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Clover.mcr 
+curl -s -o Feast.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Feast.mcr 
+curl -s -o Pineapple.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pineapple.mcr 
+curl -s -o Pinetree.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pinetree.mcr 
+curl -s -o Pumpkin.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pumpkin.mcr 
+curl -s -o Reconnecter.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Reconnecter.mcr 
+curl -s -o Snail.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Snail.mcr 
+curl -s -o StockTicket.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/StockTicket.mcr 
+curl -s -o Strawberry.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Strawberry.mcr 
+curl -s -o Sunflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Sunflower.mcr 
+cd..
 :configreseted
 color 3
 setlocal EnableExtensions
@@ -138,11 +156,12 @@ Echo TicketCollect=true >> Settings.txt
 Echo FeastCollect=true >> Settings.txt
 Echo CandleCollect=true >> Settings.txt
 Echo AntPassCollect=true >> Settings.txt
+Echo AntModeCollectAndPlay=false (wip) >> Settings.txt
+Echo #If AntMode enabled turn off the AntPassCollect!(if you don't want to the macro run 2 times) >> Settings.txt
 Echo ================================================================================================ >> Settings.txt
 goto successreset
 
 :START
-cd %CD%\files
 COLOR 3
 cls
 
@@ -164,45 +183,45 @@ echo.
 
 :RESTARTED
 ECHO %var[9]% | FIND /I "false">nul && ( Goto StartTicketCollectOFF )
-start stockticket.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\StockTicket.mcr" /a /c
 :CheckTicketStart
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 %Field[3]%
-set EXE=stockticket.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto CheckTicketStart
 :StartTicketCollectOFF
 ECHO %var[10]% | FIND /I "false">nul && ( Goto StartFeastCollectOFF )
-start feast.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Feast.mcr" /a /c
 :feastStart
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 %Field[3]%
-set EXE=feast.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto feastStart
 :StartFeastCollectOFF
 ECHO %var[11]% | FIND /I "false">nul && ( Goto StartCandleCollectOFF )
-start candle.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Candle.mcr" /a /c
 :CandleStart
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 %Field[3]%
-set EXE=candle.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto CandleStart
 :StartCandleCollectOFF
 ECHO %var[12]% | FIND /I "false">nul && ( Goto StartANTCollectOFF )
-start antpass.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\AntPass.mcr" /a /c
 :ANTStart
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 %Field[3]%
-set EXE=antpass.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANTStart
 :StartANTCollectOFF
 
 :loop
 set loopcount=120
-start %Field[1]%.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\%Field[1]%.mcr" /a /c
 :loop1
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
@@ -212,12 +231,12 @@ set /a loopcount=loopcount-1
 if %loopcount%==0 goto exitloop1
 goto loop1
 :exitloop1
-TASKKILL /F /IM %Field[1]%.exe
+TASKKILL /F /IM MacroRecorder.exe
 ECHO %var[9]% | FIND /I "false">Nul && ( Goto TicketCollectOFF )
 echo.
 Echo Ticket collection started at %time%
 echo.
-start stockticket.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\StockTicket.mcr" /a /c
 :CheckTicket
 %Field[3]%
 set EXE=stockticket.exe
@@ -227,7 +246,7 @@ FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% E
 :TicketCollectOFF
 
 set loopcount=60
-start %Field[1]%.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\%Field[1]%.mcr" /a /c
 :loop2
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
@@ -242,17 +261,17 @@ ECHO %var[10]% | FIND /I "false">Nul && ( Goto FeastCollectOFF )
 echo.
 Echo Festive feast collection started at %time%
 echo.
-start feast.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Feast.mcr" /a /c
 :feast
 %Field[3]%
-set EXE=feast.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto feast
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 :FeastCollectOFF
 
 set loopcount=60
-start %Field[1]%.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\%Field[1]%.mcr" /a /c
 :loop3
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
@@ -262,54 +281,46 @@ set /a loopcount=loopcount-1
 if %loopcount%==0 goto exitloop3
 goto loop3
 :exitloop3
-TASKKILL /F /IM %Field[1]%.exe
+TASKKILL /F /IM MacroRecorder.exe
 ECHO %var[9]% | FIND /I "false">Nul && ( Goto 1TicketCollectOFF )
 echo.
 Echo Ticket collection started at %time%
 echo.
-start stockticket.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\StockTicket.mcr" /a /c
 :CheckTicket1
 %Field[3]%
-set EXE=stockticket.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto CheckTicket1
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 :1TicketCollectOFF
 ECHO %var[11]% | FIND /I "false">Nul && ( Goto CandleCollectOFF )
-start candle.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Candle.mcr" /a /c
 echo.
 Echo Candle collection started %time%
 echo.
 :Candle
 %Field[3]%
-set EXE=candle.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto Candle
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 :CandleCollectOFF
 ECHO %var[12]% | FIND /I "false">nul && ( Goto ANTCollectOFF )
-start antpass.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\AntPass.mcr" /a /c
 :ANT
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 %Field[3]%
-set EXE=antpass.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANT
 :ANTCollectOFF
 goto loop
 
 
 :DC
-set EXE=%Field[1]%.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM %Field[1]%.exe && goto DC
-set EXE=stockticket.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM stockticket.exe && goto DC
-set EXE=feast.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM feast.exe && goto DC
-set EXE=candle.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM candle.exe && goto DC
-set EXE=reconnected.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM reconnected.exe && goto DC
+set EXE=MacroRecorder.exe
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe && goto DC
 :DC1
 %Field[4]%
 %Field[5]%
@@ -322,24 +333,25 @@ set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto RobloxOnline
 goto RobloxNOPE
 :RobloxOnline
-Start reconnected.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Reconnecter.mcr" /a /c
 :Reconnectrunning
 set EXE=RobloxPlayerBeta.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% TASKKILL /F /IM reconnected.exe & goto DC
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe & goto DC
 %Field[3]%
-set EXE=reconnected.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto Reconnectrunning
 Echo Macro restarted at %TIME%
 goto RESTARTED
 
 :STARTBUCKO
-cd %CD%\files
+
 COLOR 3
 set field=0
 set Field[!field!]=%%x
-ECHO %var[7]% | FIND /I "true" && ( set "Field[3]= "  ) && Set "Field[4]=Echo LvL7ReconnectMode is disabled in the settings. Pingcheck function disabled! " && goto lvl7offBUCKO
+ECHO %var[7]% | FIND /I "false" && ( set "Field[3]= "  ) && Set "Field[4]=Echo LvL7ReconnectMode is disabled in the settings. Pingcheck function disabled! " && goto lvl7offBUCKO
 ping -n 1 www.google.com | findstr TTL && set "Field[3]=ping -n 1 www.google.com | findstr TTL | find "Reply" > nul || goto DCBUCKO" && set "Field[4]=ping -n 1 www.google.com | findstr TTL | find "Reply" > nul && goto NetBUCKO" && set "Field[5]=ping -n 1 www.google.com | findstr TTL | find "Reply" > nul || goto DC1BUCKO"
 :lvl7offBUCKO
+cls
 
 title                                                         %Field[2]% CONSOLE
 Echo. 
@@ -359,45 +371,45 @@ echo.
 
 :RESTARTEDBUCKO
 ECHO %var[9]% | FIND /I "false">nul && ( Goto StartTicketCollectOFFBUCKO )
-start stockticket.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\StockTicket.mcr" /a /c
 :CheckTicketStartBUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
 %Field[3]%
-set EXE=stockticket.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto CheckTicketStartBUCKO
 :StartTicketCollectOFFBUCKO
 ECHO %var[10]% | FIND /I "false">nul && ( Goto StartFeastCollectOFFBUCKO )
-start feast.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Feast.mcr" /a /c
 :feastStartBUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
 %Field[3]%
-set EXE=feast.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto feastStartBUCKO
 :StartFeastCollectOFFBUCKO
 ECHO %var[11]% | FIND /I "false">nul && ( Goto StartCandleCollectOFFBUCKO )
-start candle.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Candle.mcr" /a /c
 :CandleStartBUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
 %Field[3]%
-set EXE=candle.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto CandleStartBUCKO
 :StartCandleCollectOFFBUCKO
 ECHO %var[12]% | FIND /I "false">nul && ( Goto StartANTCollectOFFBUCKO )
-start antpass.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\AntPass.mcr" /a /c
 :ANTStartBUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
 %Field[3]%
-set EXE=antpass.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANTStartBUCKO
 :StartANTCollectOFFBUCKO
 
 :loopBUCKO
 set loopcount=120
-start %Field[1]%.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\%Field[1]%.mcr" /a /c
 :loop1BUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
@@ -407,15 +419,15 @@ set /a loopcount=loopcount-1
 if %loopcount%==0 goto exitloop1BUCKO
 goto loop1BUCKO
 :exitloop1BUCKO
-TASKKILL /F /IM %Field[1]%.exe
+TASKKILL /F /IM MacroRecorder.exe
 ECHO %var[9]% | FIND /I "false">Nul && ( Goto TicketCollectOFFBUCKO )
 echo.
 Echo Ticket collection started at %time%
 echo.
-start stockticket.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\StockTicket.mcr" /a /c
 :CheckTicketBUCKO
 %Field[3]%
-set EXE=stockticket.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto CheckTicketBUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
@@ -424,28 +436,28 @@ ECHO %var[10]% | FIND /I "false">Nul && ( Goto FeastCollectOFFBUCKO )
 echo.
 Echo Festive feast collection started at %time%
 echo.
-start feast.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Feast.mcr" /a /c
 :FeastBUCKO
 %Field[3]%
-set EXE=feast.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FeastBUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
 :FeastCollectOFFBUCKO
 ECHO %var[11]% | FIND /I "false">Nul && ( Goto CandleCollectOFFBUCKO )
-start candle.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Candle.mcr" /a /c
 echo.
 Echo Candle collection started %time%
 echo.
 :CandleBUCKO
 %Field[3]%
-set EXE=candle.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto CandleBUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
 :CandleCollectOFFBUCKO
 ECHO %var[12]% | FIND /I "false">nul && ( Goto ANTCollectOFF )
-start antpass.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\AntPass.mcr" /a /c
 echo.
 Echo AntPass collection started %time%
 echo.
@@ -453,25 +465,15 @@ echo.
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
 %Field[3]%
-set EXE=antpass.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANTBUCKO
 :ANTCollectOFFBUCKO
 goto loopBUCKO
 
 
 :DCBUCKO
-set EXE=%Field[1]%.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM %Field[1]%.exe && goto DCBUCKO
-set EXE=stockticket.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM stockticket.exe && goto DCBUCKO
-set EXE=feast.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM feast.exe && goto DCBUCKO
-set EXE=candle.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM candle.exe && goto DCBUCKO
-set EXE=reconnected.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM reconnected.exe && goto DCBUCKO
-set EXE=antpass.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM antpass.exe && goto DCBUCKO
+set EXE=MacroRecorder.exe
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe && goto DCBUCKO
 :DC1BUCKO
 %Field[4]%
 %Field[5]%
@@ -484,12 +486,12 @@ set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto RobloxOnlineBUCKO
 goto RobloxNOPEBUCKO
 :RobloxOnlineBUCKO
-Start reconnected.exe
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Reconnecter.mcr" /a /c
 :ReconnectrunningBUCKO
 set EXE=RobloxPlayerBeta.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% TASKKILL /F /IM reconnected.exe & goto DCBUCKO
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe & goto DCBUCKO
 %Field[3]%
-set EXE=reconnected.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ReconnectrunningBUCKO
 Echo Macro restarted at %TIME%
 goto RESTARTEDBUCKO
