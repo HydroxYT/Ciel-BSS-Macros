@@ -1,4 +1,12 @@
 @echo off
+color 3
+title UPDATING...
+echo.
+echo.
+echo.
+echo.
+echo                           Please wait until the console checks/updates the macros...
+echo                                      This will only take few seconds.
 cd %CD%\Macros
 curl -s -o Antpass.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Antpass.mcr 
 curl -s -o Bamboo.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Bamboo.mcr 
@@ -18,7 +26,7 @@ curl -s -o Strawberry.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Ma
 curl -s -o Sunflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Sunflower.mcr 
 cd..
 :configreseted
-color 3
+
 setlocal EnableExtensions
 setlocal enabledelayedexpansion
 set count=0
