@@ -12,30 +12,60 @@ for /f "tokens=*" %%x in (Settings.txt) do (
 )
 ECHO %var[16]% | FIND /I "false" && ( goto UPDATINGSkip  )
 title UPDATING...
-echo.
-echo.
-echo.
-echo.
-echo                           Please wait until the console checks/updates the macros...
-echo                                      This will only take few seconds.
 cd %CD%\Macros
-curl -s -o Antpass.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Antpass.mcr 
-curl -s -o Bamboo.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Bamboo.mcr 
-curl -s -o Blueflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Blueflower.mcr 
-curl -s -o Bucko.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Bucko.mcr 
-curl -s -o Cactus.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Cactus.mcr 
-curl -s -o Candle.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Candle.mcr 
-curl -s -o Clover.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Clover.mcr 
-curl -s -o Feast.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Feast.mcr 
-curl -s -o Pineapple.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pineapple.mcr 
-curl -s -o Pinetree.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pinetree.mcr 
-curl -s -o Pumpkin.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pumpkin.mcr 
-curl -s -o Reconnecter.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Reconnecter.mcr 
-curl -s -o Snail.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Snail.mcr 
-curl -s -o StockTicket.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/StockTicket.mcr 
-curl -s -o Strawberry.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Strawberry.mcr 
-curl -s -o Sunflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Sunflower.mcr 
+chcp 65001 >nul
+set "UPDATE[1]=▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[2]=▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[3]=▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[4]=▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[5]=▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[6]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[7]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[8]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[9]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[10]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[11]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒"
+set "UPDATE[12]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒"
+set "UPDATE[14]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒"
+set "UPDATE[15]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒"
+set "UPDATE[16]=▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓" 
+set "UPDATED[1]=curl -s -o Antpass.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Antpass.mcr " 
+set "UPDATED[2]=curl -s -o Bamboo.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Bamboo.mcr " 
+set "UPDATED[3]=curl -s -o Blueflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Blueflower.mcr " 
+set "UPDATED[4]=curl -s -o Bucko.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Bucko.mcr " 
+set "UPDATED[5]=curl -s -o Cactus.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Cactus.mcr" 
+set "UPDATED[6]=curl -s -o Candle.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Candle.mcr" 
+set "UPDATED[7]=curl -s -o Clover.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Clover.mcr" 
+set "UPDATED[8]=curl -s -o Feast.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Feast.mcr " 
+set "UPDATED[9]=curl -s -o Pineapple.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pineapple.mcr" 
+set "UPDATED[10]=curl -s -o Pinetree.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pinetree.mcr" 
+set "UPDATED[11]=curl -s -o Pumpkin.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Pumpkin.mcr" 
+set "UPDATED[12]=curl -s -o Reconnecter.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Reconnecter.mcr " 
+set "UPDATED[13]=curl -s -o Snail.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Snail.mcr " 
+set "UPDATED[14]=curl -s -o StockTicket.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/StockTicket.mcr" 
+set "UPDATED[15]=curl -s -o Sunflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Sunflower.mcr " 
 cd..
+set "uprog=0"
+set "uprogd=0"
+:UpdateLoop
+set /a "uprog+=1"
+set /a "uprogd+=1"
+if defined UPDATE[%uprog%] (
+    call echo.
+    call echo.
+    call echo.
+    call echo.
+    call echo                           Please wait until the console checks/updates the macros...
+    call echo                                      This will only take few seconds.  
+	call echo.
+    call echo                                     %%UPDATE[%uprog%]%%
+)
+if defined UPDATED[%uprogd%] (
+	cls
+    goto UpdateLoop
+)
+echo.
+
 :UPDATINGSkip
 title Bee Swarm Simulator Macro Console
 set "App[1]=Blueflower"
