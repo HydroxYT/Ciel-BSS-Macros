@@ -55,8 +55,6 @@ if defined UPDATE[%uprog%] (
     call echo.
     call echo.
     call echo.
-    call echo                           Please wait until the console checks/updates the macros...
-    call echo                                      This will only take few seconds.  
 	call echo.
     call echo                                     %%UPDATE[%uprog%]%%
 )
