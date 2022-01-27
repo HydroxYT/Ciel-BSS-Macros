@@ -1,10 +1,9 @@
 @echo off
 color 3
-TASKKILL /F /IM MacroRecorder.exe
-TASKKILL /F /IM MacroRecorder.exe
-TASKKILL /F /IM MacroRecorder.exe
-TASKKILL /F /IM MacroRecorder.exe
-TASKKILL /F /IM MacroRecorder.exe
+:MCRKILL
+set EXE=MacroRecorder.exe
+
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe && goto MCRKILL
 :configreseted
 
 setlocal EnableExtensions
