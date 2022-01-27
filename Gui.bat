@@ -1,6 +1,10 @@
 @echo off
 color 3
-
+TASKKILL /F /IM MacroRecorder.exe
+TASKKILL /F /IM MacroRecorder.exe
+TASKKILL /F /IM MacroRecorder.exe
+TASKKILL /F /IM MacroRecorder.exe
+TASKKILL /F /IM MacroRecorder.exe
 :configreseted
 
 setlocal EnableExtensions
@@ -10,6 +14,7 @@ for /f "tokens=*" %%x in (Settings.txt) do (
     set /a count+=1
     set var[!count!]=%%x
 )
+Cls
 ECHO %var[16]% | FIND /I "false" && ( goto UPDATINGSkip  )
 title UPDATING...
 echo.
@@ -235,7 +240,7 @@ echo.
 "%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\StockTicket.mcr" /a /c
 :CheckTicket
 %Field[3]%
-set EXE=stockticket.exe
+set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto CheckTicket
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
