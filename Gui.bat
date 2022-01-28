@@ -1,11 +1,8 @@
 @echo off
 color 3
-:MCRKILL
-set EXE=MacroRecorder.exe
 
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe && goto MCRKILL
 :configreseted
-
+chcp 65001 >nul
 setlocal EnableExtensions
 setlocal enabledelayedexpansion
 set count=0
@@ -13,11 +10,25 @@ for /f "tokens=*" %%x in (Settings.txt) do (
     set /a count+=1
     set var[!count!]=%%x
 )
-Cls
 ECHO %var[16]% | FIND /I "false" && ( goto UPDATINGSkip  )
 title UPDATING...
 echo.
 echo.
+Echo                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+Echo                            ░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░████░░░░░░░░██▒▒░░░░░░░░
+Echo                            ░░░░░░░░░███████░░░░░░██░░░███████████▒░░░░░███▒▒░░░░░░░░
+Echo                            ░░░░░░░████████▒░░░░░▒▒░░░░██████▒▒▒▒▒▒░░░░████▒▒░░░░░░░░
+Echo                            ░░░░░░████▒▒▒▒▒▒░░░░███▒▒░░███▒▒▒▒░░░░░░░░░███▒▒▒░░░░░░░░
+echo                            ░░░░░████▒▒▒▒░░░░░░░████▒░░███▒░░░░░░░░░░░░███▒▒░░░░░░░░░
+echo                            ░░░░░███▒▒▒░░░░░░░░░███▒▒░░███▒░░░░███░░░░███▒▒▒░░░░░░░░░
+echo                            ░░░░████▒▒░░░░░░░░░████▒░░████████████▒░░░███▒▒░░░░░░░░░░
+echo                            ░░░░███▒▒░░░░░░░░░░████▒░░██████████▒▒▒░░███▒▒░░░░░░░░░░░  
+echo                            ░░░░████▒▒░░░░░░░░░████▒░░███▒▒▒▒▒▒▒▒░░░░██▒▒▒░░░░░░░░░░░
+echo                            ░░░░░███▒▒░░░░▒▒▒░░███▒▒░░███▒░░░░░░░░░░███▒▒░░░░░░░██░░░
+echo                            ░░░░░████▒▒▒▒▒▒██░░███▒▒░████▒▒▒▒▒░███░░███▒▒░░░░░░██░░░░
+Echo                            ░░░░░░█████▒█████░████▒░░█████████████░░█████████████░░░░
+Echo                            ░░░░░░░░████████░░████▒░░█████████░░░░░░░█████████░░░░░░░
+echo                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 echo.
 echo.
 echo                           Please wait until the console checks/updates the macros...
@@ -66,31 +77,26 @@ set "Message="
 :Menu
 cls
 echo.%Message%
-echo.  
-echo                         Macros created by Hydrox
-echo         Don't worry you can't get banned while you using this!
-echo.               
+echo  Note: Resolution Scale Recommended 100%%
 echo.
-echo.
-
-Echo  Fields:
-Echo  1.  Blueflower Field
-Echo  2.  Bamboo Field
-Echo  3.  Pinetree Field
-Echo  4.  Strawberry Field
-Echo  5.  Sunflower Field
-echo  6.  Pineapple Field
-echo  7.  Cactus Field
-echo  8.  Pumpkin Field
-echo  9.  Clover Field
-echo.
-echo  Modes:
-echo  10. Bucko Bee Quest
-Echo  11. Snail Killer(REWORK SOON)
-Echo.
-echo  Others:
-Echo  12.  Discord
-Echo  13.  Reset Settings
+Echo  Fields:     Resolution Scale (100%%-125%%)
+Echo  1.  Blueflower Field                           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+Echo  2.  Bamboo Field                               ░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░████░░░░░░░░██▒▒░░░░░░░░
+Echo  3.  Pinetree Field                             ░░░░░░░░░███████░░░░░░██░░░███████████▒░░░░░███▒▒░░░░░░░░
+Echo  4.  Strawberry Field                           ░░░░░░░████████▒░░░░░▒▒░░░░██████▒▒▒▒▒▒░░░░████▒▒░░░░░░░░
+Echo  5.  Sunflower Field                            ░░░░░░████▒▒▒▒▒▒░░░░███▒▒░░███▒▒▒▒░░░░░░░░░███▒▒▒░░░░░░░░
+echo  6.  Pineapple Field                            ░░░░░████▒▒▒▒░░░░░░░████▒░░███▒░░░░░░░░░░░░███▒▒░░░░░░░░░
+echo  7.  Cactus Field                               ░░░░░███▒▒▒░░░░░░░░░███▒▒░░███▒░░░░███░░░░███▒▒▒░░░░░░░░░
+echo  8.  Pumpkin Field                              ░░░░████▒▒░░░░░░░░░████▒░░████████████▒░░░███▒▒░░░░░░░░░░
+echo  9.  Clover Field                               ░░░░███▒▒░░░░░░░░░░████▒░░██████████▒▒▒░░███▒▒░░░░░░░░░░░  
+echo.                                                ░░░░████▒▒░░░░░░░░░████▒░░███▒▒▒▒▒▒▒▒░░░░██▒▒▒░░░░░░░░░░░
+echo  Modes:                                         ░░░░░███▒▒░░░░▒▒▒░░███▒▒░░███▒░░░░░░░░░░███▒▒░░░░░░░██░░░
+echo  10. Bucko Bee Quest (100%%-115%%)                ░░░░░████▒▒▒▒▒▒██░░███▒▒░████▒▒▒▒▒░███░░███▒▒░░░░░░██░░░░
+Echo  11. Snail Killer (100%%-125%%)                   ░░░░░░█████▒█████░████▒░░█████████████░░█████████████░░░░
+Echo.                                                ░░░░░░░░████████░░████▒░░█████████░░░░░░░█████████░░░░░░░
+echo  Others:                                        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+Echo  12.  Discord                                                  Macros  created by Hydrox
+Echo  13.  Reset Settings                                        Choose a number and press Enter
 Echo.
 Echo  14.  Exit
 Echo.
