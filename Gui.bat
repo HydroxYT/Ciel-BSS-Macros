@@ -1,6 +1,8 @@
 @echo off
 color 3
-
+:MCRKILL
+set EXE=MacroRecorder.exe
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe && goto MCRKILL
 :configreseted
 chcp 65001 >nul
 setlocal EnableExtensions
@@ -173,11 +175,25 @@ cls
 
 title                                                         %Field[2]% CONSOLE
 Echo. 
+Echo                         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+Echo                         ░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░████░░░░░░░░██▒▒░░░░░░░░
+Echo                         ░░░░░░░░░███████░░░░░░██░░░███████████▒░░░░░███▒▒░░░░░░░░
+Echo                         ░░░░░░░████████▒░░░░░▒▒░░░░██████▒▒▒▒▒▒░░░░████▒▒░░░░░░░░
+Echo                         ░░░░░░████▒▒▒▒▒▒░░░░███▒▒░░███▒▒▒▒░░░░░░░░░███▒▒▒░░░░░░░░
+echo                         ░░░░░████▒▒▒▒░░░░░░░████▒░░███▒░░░░░░░░░░░░███▒▒░░░░░░░░░
+echo                         ░░░░░███▒▒▒░░░░░░░░░███▒▒░░███▒░░░░███░░░░███▒▒▒░░░░░░░░░
+echo                         ░░░░████▒▒░░░░░░░░░████▒░░████████████▒░░░███▒▒░░░░░░░░░░
+echo                         ░░░░███▒▒░░░░░░░░░░████▒░░██████████▒▒▒░░███▒▒░░░░░░░░░░░  
+echo                         ░░░░████▒▒░░░░░░░░░████▒░░███▒▒▒▒▒▒▒▒░░░░██▒▒▒░░░░░░░░░░░
+echo                         ░░░░░███▒▒░░░░▒▒▒░░███▒▒░░███▒░░░░░░░░░░███▒▒░░░░░░░██░░░
+echo                         ░░░░░████▒▒▒▒▒▒██░░███▒▒░████▒▒▒▒▒░███░░███▒▒░░░░░░██░░░░
+Echo                         ░░░░░░█████▒█████░████▒░░█████████████░░█████████████░░░░
+Echo                         ░░░░░░░░████████░░████▒░░█████████░░░░░░░█████████░░░░░░░
+echo                         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+echo.
 Echo. 
-Echo. 
-Echo. 
-Echo                                    %Field[2]% MACRO STARTED
-Echo                                        DON'T CLOSE THE WINDOW
+Echo                                         %Field[2]% MACRO STARTED
+Echo                                          DON'T CLOSE THE WINDOW
 Echo. 
 Echo.		
 Echo Timer is counting if it's finished macro will restart and claim the materials.
@@ -232,12 +248,12 @@ set loopcount=120
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 %Field[3]%
-timeout /T 30 > nul
+timeout /T 30 /NOBREAK > nul
 set /a loopcount=loopcount-1
 if %loopcount%==0 goto exitloop1
 goto loop1
 :exitloop1
-TASKKILL /F /IM MacroRecorder.exe
+TASKKILL /F /IM MacroRecorder.exe >nul
 ECHO %var[9]% | FIND /I "false">Nul && ( Goto TicketCollectOFF )
 echo.
 Echo Ticket collection started at %time%
@@ -257,12 +273,12 @@ set loopcount=60
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 %Field[3]%
-timeout /T 30 > nul
+timeout /T 30 /NOBREAK > nul
 set /a loopcount=loopcount-1
 if %loopcount%==0 goto exitloop2
 goto loop2
 :exitloop2
-TASKKILL /F /IM %Field[1]%.exe
+TASKKILL /F /IM MacroRecorder.exe >nul
 ECHO %var[10]% | FIND /I "false">Nul && ( Goto FeastCollectOFF )
 echo.
 Echo Festive feast collection started at %time%
@@ -282,12 +298,12 @@ set loopcount=60
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
 %Field[3]%
-timeout /T 30 > nul
+timeout /T 30 /NOBREAK > nul
 set /a loopcount=loopcount-1
 if %loopcount%==0 goto exitloop3
 goto loop3
 :exitloop3
-TASKKILL /F /IM MacroRecorder.exe
+TASKKILL /F /IM MacroRecorder.exe >nul
 ECHO %var[9]% | FIND /I "false">Nul && ( Goto 1TicketCollectOFF )
 echo.
 Echo Ticket collection started at %time%
@@ -328,7 +344,7 @@ goto loop
 
 :DC
 set EXE=MacroRecorder.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe && goto DC
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe >nul && goto DC
 :DC1
 %Field[4]%
 %Field[5]%
@@ -344,7 +360,7 @@ goto RobloxNOPE
 "%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Reconnecter.mcr" /a /c
 :Reconnectrunning
 set EXE=RobloxPlayerBeta.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe & goto DC
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe >nul & goto DC
 %Field[3]%
 set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto Reconnectrunning
@@ -364,10 +380,25 @@ cls
 title                                                         %Field[2]% CONSOLE
 Echo. 
 Echo. 
+Echo                         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+Echo                         ░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░████░░░░░░░░██▒▒░░░░░░░░
+Echo                         ░░░░░░░░░███████░░░░░░██░░░███████████▒░░░░░███▒▒░░░░░░░░
+Echo                         ░░░░░░░████████▒░░░░░▒▒░░░░██████▒▒▒▒▒▒░░░░████▒▒░░░░░░░░
+Echo                         ░░░░░░████▒▒▒▒▒▒░░░░███▒▒░░███▒▒▒▒░░░░░░░░░███▒▒▒░░░░░░░░
+echo                         ░░░░░████▒▒▒▒░░░░░░░████▒░░███▒░░░░░░░░░░░░███▒▒░░░░░░░░░
+echo                         ░░░░░███▒▒▒░░░░░░░░░███▒▒░░███▒░░░░███░░░░███▒▒▒░░░░░░░░░
+echo                         ░░░░████▒▒░░░░░░░░░████▒░░████████████▒░░░███▒▒░░░░░░░░░░
+echo                         ░░░░███▒▒░░░░░░░░░░████▒░░██████████▒▒▒░░███▒▒░░░░░░░░░░░  
+echo                         ░░░░████▒▒░░░░░░░░░████▒░░███▒▒▒▒▒▒▒▒░░░░██▒▒▒░░░░░░░░░░░
+echo                         ░░░░░███▒▒░░░░▒▒▒░░███▒▒░░███▒░░░░░░░░░░███▒▒░░░░░░░██░░░
+echo                         ░░░░░████▒▒▒▒▒▒██░░███▒▒░████▒▒▒▒▒░███░░███▒▒░░░░░░██░░░░
+Echo                         ░░░░░░█████▒█████░████▒░░█████████████░░█████████████░░░░
+Echo                         ░░░░░░░░████████░░████▒░░█████████░░░░░░░█████████░░░░░░░
+echo                         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+echo.
 Echo. 
-Echo. 
-Echo                                    %Field[2]% MACRO STARTED
-Echo                                        DON'T CLOSE THE WINDOW
+Echo                                         %Field[2]% MACRO STARTED
+Echo                                          DON'T CLOSE THE WINDOW
 Echo. 
 Echo.		
 Echo Timer is counting if it's finished macro will restart and claim the materials.
@@ -422,12 +453,12 @@ set loopcount=120
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DCBUCKO
 %Field[3]%
-timeout /T 30 > nul
+timeout /T 30 /NOBREAK > nul
 set /a loopcount=loopcount-1
 if %loopcount%==0 goto exitloop1BUCKO
 goto loop1BUCKO
 :exitloop1BUCKO
-TASKKILL /F /IM MacroRecorder.exe
+TASKKILL /F /IM MacroRecorder.exe >nul
 ECHO %var[9]% | FIND /I "false">Nul && ( Goto TicketCollectOFFBUCKO )
 echo.
 Echo Ticket collection started at %time%
@@ -476,14 +507,14 @@ FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% E
 set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANTBUCKO
 :ANTCollectOFFBUCKO
-taskkill /f /im dwm.exe
+taskkill /f /im dwm.exe >nul
 start dwm.exe
 goto loopBUCKO
 
 
 :DCBUCKO
 set EXE=MacroRecorder.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe && goto DCBUCKO
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe >nul && goto DCBUCKO
 :DC1BUCKO
 %Field[4]%
 %Field[5]%
@@ -499,7 +530,7 @@ goto RobloxNOPEBUCKO
 "%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Reconnecter.mcr" /a /c
 :ReconnectrunningBUCKO
 set EXE=RobloxPlayerBeta.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe & goto DCBUCKO
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe >nul & goto DCBUCKO
 %Field[3]%
 set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ReconnectrunningBUCKO
