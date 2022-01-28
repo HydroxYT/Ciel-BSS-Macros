@@ -52,6 +52,7 @@ curl -s -o Snail.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/
 curl -s -o StockTicket.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/StockTicket.mcr 
 curl -s -o Strawberry.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Strawberry.mcr 
 curl -s -o Sunflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Sunflower.mcr 
+curl -s -o AntPlay.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/AntPlay.mcr 
 cd..
 :UPDATINGSkip
 title Bee Swarm Simulator Macro Console
@@ -240,6 +241,15 @@ FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% E
 set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANTStart
 :StartANTCollectOFF
+ECHO %var[13]% | FIND /I "false">nul && ( Goto ANTPLAYStartOFFOFF )
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\AntPass.mcr" /a /c
+:ANTPLAYStart
+set EXE=RobloxPlayerBeta.exe
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
+%Field[3]%
+set EXE=MacroRecorder.exe
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANTPLAYStart
+:ANTPLAYStartOFF
 
 :loop
 set loopcount=120
@@ -337,6 +347,15 @@ FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% E
 set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANT
 :ANTCollectOFF
+ECHO %var[13]% | FIND /I "false">nul && ( Goto ANTPLAYOFF )
+"%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\AntPlay.mcr" /a /c
+:ANTPLAY
+set EXE=RobloxPlayerBeta.exe
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DC
+%Field[3]%
+set EXE=MacroRecorder.exe
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto ANTPLAY
+:ANTPLAYOFF
 taskkill /f /im dwm.exe
 start dwm.exe
 goto loop
