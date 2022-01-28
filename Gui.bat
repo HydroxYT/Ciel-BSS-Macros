@@ -3,6 +3,7 @@ color 3
 :MCRKILL
 set EXE=MacroRecorder.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% TASKKILL /F /IM MacroRecorder.exe && goto MCRKILL
+cls
 :configreseted
 chcp 65001 >nul
 setlocal EnableExtensions
