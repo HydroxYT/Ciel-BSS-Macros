@@ -33,6 +33,21 @@ Echo                            ░░░░░░█████▒████
 Echo                            ░░░░░░░░████████░░████▒░░█████████░░░░░░░█████████░░░░░░░
 echo                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 echo.
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
+echo                                     UPDATE CAMED OUT SETTINGS RESETED
 echo.
 echo                           Please wait until the console checks/updates the macros...
 echo                                      This will only take few seconds.
@@ -55,7 +70,8 @@ curl -s -o Strawberry.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Ma
 curl -s -o Sunflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Sunflower.mcr 
 curl -s -o AntPlay.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/AntPlay.mcr 
 cd..
-curl -s -o Start.bat https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Start.bat 
+del /f "Start.bat" >nul && curl -s -o Start.bat https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Start.bat
+del /f "Settings.txt" >nul && curl -s -o Settings.txt https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Settings.txt && start Start.bat
 :UPDATINGSkip
 set Reconnectlink="%Settings[9]%"
 set Field=0
@@ -215,13 +231,14 @@ Echo                                          DON'T CLOSE THE WINDOW
 Echo. 
 Echo.		
 Echo Timer is counting if it's finished macro will restart and claim the materials.
-Echo Macro start in 10 seconds after don't do ANYTHING!
+Echo Macro start in 5 seconds after don't do ANYTHING!
 Echo.
 Echo.
 Echo ACTIVITY LOG:
 Echo Started at %TIME%
 echo.
 
+Timeout /t 5 /nobreak >nul
 :RESTARTED
 
 ECHO %Settings[13]% | FIND /I "false">nul && ( Goto StartTicketCollectOFF )
@@ -243,7 +260,7 @@ set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto Disconnected
 %LvL7[1]%
 set EXE=MacroRecorder.exe
-FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto FeastStart
+FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto Feaststart
 :StartFeastCollectOFF
 
 
@@ -497,13 +514,13 @@ Echo                                          DON'T CLOSE THE WINDOW
 Echo. 
 Echo.		
 Echo Timer is counting if it's finished macro will restart and claim the materials.
-Echo Macro start in 10 seconds after don't do ANYTHING!
+Echo Macro start in 5 seconds after don't do ANYTHING!
 Echo.
 Echo.
 Echo ACTIVITY LOG:
 Echo Started at %TIME%
 echo.
-Timeout /t 10 /nobreak >nul
+Timeout /t 5 /nobreak >nul
 :RESTARTEDBUCKO
 
 ECHO %Settings[13]% | FIND /I "false">nul && ( Goto StartTicketCollectOFFBUCKO )
@@ -520,7 +537,7 @@ FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF %%x == %EXE% goto 
 
 ECHO %Settings[14]% | FIND /I "false">nul && ( Goto StartFeastCollectOFFBUCKO )
 START "" "%CD%\MacroRecorder\MacroRecorder.exe" "%CD%\Macros\Feast.mcr" /a /c
-:FeastStart
+:FeastStartBUCKO
 set EXE=RobloxPlayerBeta.exe
 FOR /F %%x IN ('tasklist /NH /FI "IMAGENAME eq %EXE%"') DO IF not %%x == %EXE% Echo Macro Stopped %TIME% (Roblox Crash Detected) && goto DisconnectedBUCKO
 %LvL7[1]%
