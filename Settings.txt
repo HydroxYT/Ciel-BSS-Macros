@@ -16,4 +16,5 @@ HoneyCandles=true
 #If AntMode enabled turn off the AntPassCollect!(if you don't want to the macro run 2 times)
 AntPassCollect=true 
 AntModeCollectAndPlay=false
+#BuckoMode only AntPass support Antmode not!
 ================================================================================================ 
