@@ -33,21 +33,6 @@ Echo                            ░░░░░░█████▒████
 Echo                            ░░░░░░░░████████░░████▒░░█████████░░░░░░░█████████░░░░░░░
 echo                            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 echo.
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
-echo                                     UPDATE CAMED OUT SETTINGS RESETED
 echo.
 echo                           Please wait until the console checks/updates the macros...
 echo                                      This will only take few seconds.
@@ -70,8 +55,7 @@ curl -s -o Strawberry.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Ma
 curl -s -o Sunflower.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/Sunflower.mcr 
 curl -s -o AntPlay.mcr https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Macros/AntPlay.mcr 
 cd..
-del /f "Start.bat" >nul && curl -s -o Start.bat https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Start.bat
-del /f "Settings.txt" >nul && curl -s -o Settings.txt https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Settings.txt && start Start.bat
+curl -s -o Start.bat https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Start.bat
 :UPDATINGSkip
 set Reconnectlink="%Settings[9]%"
 set Field=0
