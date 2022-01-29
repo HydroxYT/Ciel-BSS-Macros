@@ -55,6 +55,6 @@ echo                                          DON'T CLOSE THE WINDOW
 echo                                     UPDATE CAMED OUT SETTINGS RESETED
 echo                                          DON'T CLOSE THE WINDOW
 echo.
-Timeout /t 30 /nobreak
+Timeout /t 15 /nobreak
 del /f "Start.bat" >nul && curl -s -o Start.bat https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Start.bat
 del /f "Settings.txt" >nul && curl -s -o Settings.txt https://raw.githubusercontent.com/HydroxYT/Ciel-BSS-Macros/main/Settings.txt && start Start.bat && exit
