@@ -1,16 +1,19 @@
-If you want to turn on or off set "true" to "false". 
+                      If you want to turn on or off set "true" to "false".
+================================================================================================
+CONSOLE SETTINGS
+AutoUpdate=true 
+EnableLvL7ReconnectMode=false
+NoPrivateLink=SOON  
 ================================================================================================ 
-Private Server Link (REQUIRED) 
-================================================================================================ 
-www.google.com  
-================================================================================================ 
-EnableLvL7ReconnectMode=false  
-================================================================================================ 
-TicketCollect=true 
-FeastCollect=true 
-CandleCollect=true 
-AntPassCollect=true 
-AntModeCollectAndPlay=false (wip)
+PRIVATE SERVER LINK (REQUIRED) 
+https://web.roblox.com/  
+================================================================================================
+COLLECT SETTINGS 
+TicketOnly=CommingSOON
+TicketAndStockings=true 
+FestiveFeast=true 
+HoneyCandles=true 
 #If AntMode enabled turn off the AntPassCollect!(if you don't want to the macro run 2 times)
+AntPassCollect=true 
+AntModeCollectAndPlay=false
 ================================================================================================ 
-AutoUpdate=true
